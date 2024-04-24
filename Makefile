@@ -32,6 +32,9 @@ ccflags-y += -D__CHECK_ENDIAN__
 
 all:
 	$(MAKE) -C $(KSRC) M=$(PWD) modules
+uninstall:
+	@rm $(MODDESTDIR)/btusb.ko* $(MODDESTDIR)/btrtl.ko*
+
 install: all
 
 	@mkdir -p $(MODDESTDIR)
