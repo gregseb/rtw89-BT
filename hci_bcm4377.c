@@ -17,7 +17,12 @@
 #include <linux/pci.h>
 #include <linux/printk.h>
 
+#include <linux/version.h>
+#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 12, 0)
 #include <asm/unaligned.h>
+#else
+#include <linux/unaligned.h>
+#endif
 
 #include <net/bluetooth/bluetooth.h>
 #include <net/bluetooth/hci_core.h>

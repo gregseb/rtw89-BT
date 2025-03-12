@@ -10,7 +10,12 @@
 #include <linux/serdev.h>
 #include <linux/of.h>
 #include <linux/skbuff.h>
+#include <linux/version.h>
+#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 12, 0)
 #include <asm/unaligned.h>
+#else
+#include <linux/unaligned.h>
+#endif
 #include <linux/firmware.h>
 #include <linux/string.h>
 #include <linux/crc8.h>
